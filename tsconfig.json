@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "Commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false,
+    "target": "es2018",
+    "sourceMap": true,
+    "strict": true,
+    "baseUrl": ".",
+    "incremental": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "types": [
+      "@types/node"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".git",
+    "dist"
+  ],
+  "include": [
+    "./**/*"
+  ],
+} 

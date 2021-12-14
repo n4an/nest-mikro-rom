@@ -1,0 +1,71 @@
+{
+  "name": "nest",
+  "version": "0.0.1",
+  "description": "Nestjs + MikroOrm",
+  "author": "Mik",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "cov": "jest --coverage",
+    "e2e": "jest --config ./test/jest-e2e.json",
+    "fix": "eslint --fix --ext .ts,.js,.vue .",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint --ext .ts,.js,.vue .",
+    "test": "jest",
+    "watch": "jest --watch",
+    "nest:build": "nest build",
+    "nest:start": "node dist/main",
+    "nest:dev": "nest start --watch",
+    "nest:dev:webpak": "nest build --webpack --webpackPath webpack-hmr.config.js --watch",
+    "nest:debug": "nest start --debug --watch",
+    "schema:update": "npx mikro-orm schema:update --run"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^5.0.0-dev.562",
+    "@mikro-orm/migrations": "^5.0.0-dev.562",
+    "@mikro-orm/mysql": "^5.0.0-dev.562",
+    "@mikro-orm/nestjs": "^4.3.1",
+    "@mikro-orm/reflection": "^5.0.0-dev.562",
+    "@mikro-orm/sql-highlighter": "^1.0.1",
+    "@nestjs/common": "^8.2.3",
+    "@nestjs/config": "^1.1.5",
+    "@nestjs/core": "^8.2.3",
+    "@nestjs/event-emitter": "^1.0.0",
+    "@nestjs/mapped-types": "*",
+    "@nestjs/platform-fastify": "^8.2.3",
+    "bcrypt": "^5.0.1",
+    "mysql2": "^2.3.3",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^5.0.0-dev.562",
+    "@mikro-orm/seeder": "^5.0.0-dev.562",
+    "@nestjs/cli": "^8.1.6",
+    "@nestjs/schematics": "^8.0.5",
+    "@nestjs/testing": "^8.2.3",
+    "@types/bcrypt": "^5.0.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.12",
+    "@types/validator": "^13.7.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.5.0",
+    "prettier": "^2.5.1",
+    "run-script-webpack-plugin": "^0.0.11",
+    "ts-jest": "^27.1.1",
+    "ts-loader": "9.2.6",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.3",
+    "webpack": "^5.65.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/nest.config.ts",
+      "./dist/nest.config.js"
+    ]
+  }
+}
