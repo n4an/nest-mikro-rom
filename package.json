@@ -6,18 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "cov": "jest --coverage",
-    "e2e": "jest --config ./test/jest-e2e.json",
-    "fix": "eslint --fix --ext .ts,.js,.vue .",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "lint": "eslint --ext .ts,.js,.vue .",
-    "test": "jest",
-    "watch": "jest --watch",
-    "nest:build": "nest build",
-    "nest:start": "node dist/main",
-    "nest:dev": "nest start --watch",
-    "nest:dev:webpak": "nest build --webpack --webpackPath webpack-hmr.config.js --watch",
-    "nest:debug": "nest start --debug --watch",
+    "dev": "nest start --watch",
     "schema:update": "npx mikro-orm schema:update --run"
   },
   "dependencies": {

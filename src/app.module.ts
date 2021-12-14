@@ -8,7 +8,7 @@ import { UsersModule } from './modules/users/users.module'
   imports: [
     MikroOrmModule.forRootAsync({
       useFactory: () => ({
-        autoLoadEntities: false,
+        // autoLoadEntities: false,
         dbName: 'nuxt_nest',
         debug: ['discovery', 'info', 'query', 'query-params'],
         discovery: {
@@ -30,11 +30,11 @@ import { UsersModule } from './modules/users/users.module'
     UsersModule
   ]
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(MikroOrmMiddleware)
-      .forRoutes('(.*)')
-      // .forRoutes('*')
-  }
+export class AppModule { // implements NestModule {
+  // configure(consumer: MiddlewareConsumer) {
+  //   consumer
+  //     .apply(MikroOrmMiddleware)
+  //     .forRoutes('(.*)')
+  //     // .forRoutes('*')
+  // }
 }
