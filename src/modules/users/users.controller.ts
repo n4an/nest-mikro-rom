@@ -1,7 +1,9 @@
 import {
   Body,
   Controller,
-  Post
+  Param,
+  Post,
+  Put
 } from '@nestjs/common'
 
 import { UsersService } from './users.service'
@@ -13,16 +15,18 @@ export class UsersController {
     private readonly usersService: UsersService
   ) {}
 
-  @Post('test')
+  @Post()
   async createUser (
     @Body() createUserDto: any
   ): Promise<User> {
-    try {
       return await this.usersService.createUser(createUserDto)
-    } catch (error: any) {
-      // log
+  }
 
-      return error
-    }
+  @Put(':id')
+  async updateUser (
+    @Param('id') id: number,
+    @Body() createUserDto: any
+  ): Promise<User | null> {
+      return await this.usersService.updateUser(+id, createUserDto)
   }
 }

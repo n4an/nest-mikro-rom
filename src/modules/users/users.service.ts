@@ -17,12 +17,26 @@ export class UsersService {
   ): Promise<User> {
     let user: User | null = null
 
-    // try {
-      user = await this.userRepository.create(createUserDto)
-      await this.userRepository.persistAndFlush(user)
-    // } catch (error: any) {
-    //   throw new UnprocessableEntityException('Unable to create new user.')
-    // }
+    user = await this.userRepository.create(createUserDto)
+    await this.userRepository.persistAndFlush(user)
+
+    return user
+  }
+
+  async updateUser (
+    id: number,
+    createUserDto: any
+  ): Promise<User | null> {
+    let user: User | null = null
+
+    user = await this.userRepository.findOne(id)
+
+    if (!user) {
+      throw new UnprocessableEntityException
+    }
+
+    user = await this.userRepository.assign(user, createUserDto)
+    await this.userRepository.persistAndFlush(user)
 
     return user
   }
